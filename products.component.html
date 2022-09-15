@@ -1,0 +1,15 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-3 col-sm-6 my-3" *ngFor="let movie of movies">
+            <div class="card ms-2" style="width: 18rem;">
+                <img [src]='"https://image.tmdb.org/t/p/w500"+movie.poster_path' class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">{{movie.title}}</h6>
+                    <p class="card-text" *ngIf="movie.isVisiable">{{movie.overview}}</p>
+                    <button  type="button" class="btn btn-primary" (click)="toggleDetails(movie.id)">{{movie.isVisiable?"hideDetails":"Show Details"}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
